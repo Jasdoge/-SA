@@ -1,4 +1,7 @@
 # ÖSA
-Översvämningsalarm med discord bot
+Översvämningsalarm med discord bot.
 
-Todo: The thing
+Arduino-kod finns under arduino/OverflowAlarm
+NodeJS kod finns under js.
+3d-filer, kopplingsscheman, manual finns under assets.
+
