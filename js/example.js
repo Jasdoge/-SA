@@ -1,5 +1,8 @@
 /*
 	Example server that runs on http://your.domain/floodSensor/(int)isFlooded/(float)humidity/(float)temperature
+	Requires the following modules to be installed:
+	- express
+	- discord.js
 */
 const BOT_TOKEN = "<your discord bot token here>";
 const CHANNEL_ID = "<your discord channel id here>";
