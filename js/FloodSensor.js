@@ -22,7 +22,7 @@ module.exports = class FloodSensor{
 		this.flooded = false;
 		this.last_message = 0;
 		this.timeout_interval = null;
-		this.online = false;
+		this.online = true;
 		this.PING_TIMEOUT = 3600e3;		// How long before the bot should say it's lost connection
 		this.botkey = botkey;
 
@@ -51,7 +51,11 @@ module.exports = class FloodSensor{
 		this.flooded = flooded;
 
 		console.log("Flooded", flooded, "Temp ", temperature, "hum", humidity);
-		client.user.setActivity("🌡️"+temperature+"C ☁️"+humidity+"%", {
+		let activity = "🌡️"+temperature+"C ☁️"+humidity+"%";
+		if( this.flooded ){
+			activity = "⚠️ FLOODED ⚠️ - "+activity;
+		}
+		client.user.setActivity(activity, {
 			type : ActivityType.Watching
 		});
 
